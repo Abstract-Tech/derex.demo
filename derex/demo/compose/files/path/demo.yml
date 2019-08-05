@@ -1,0 +1,6 @@
+# Open edX services
+version: "3"
+services:
+
+  lms:
+    container_name: demo_lms
