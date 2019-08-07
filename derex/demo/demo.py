@@ -11,7 +11,7 @@ def compose_path(name: str) -> str:
     return pkg_resources.resource_filename(__name__, f"compose/files/path/{name}")
 
 
-class Config:
+class DemoConfig:
     def yaml_opts_openedx(self) -> List[str]:
         return ["-f", compose_path("demo.yml")]
 
