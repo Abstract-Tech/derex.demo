@@ -38,6 +38,11 @@ setup(
     entry_points={"derex.runner": ["demo=derex.demo:config"]},
     description="Demo plugin for derex.runner",
     install_requires=requirements,
+    setup_requires=setup_requirements,
+    tests_require=test_requirements,
+    dependency_links=[
+        "http://github.com/Abstract-Tech/derex.runner/tarball/project-structure-and-readability#egg=derex.runner"
+    ],
     license="GNU General Public License v3",
     long_description=readme + "\n\n" + history,
     include_package_data=True,
@@ -45,9 +50,7 @@ setup(
     name="derex.demo",
     packages=find_packages(include=["derex.demo"]),
     namespace_packages=["derex"],
-    setup_requires=setup_requirements,
     test_suite="tests",
-    tests_require=test_requirements,
     url="https://github.com/Abstract-Tech/derex.demo",
     version="0.0.1",
     zip_safe=False,
