@@ -3,8 +3,8 @@ derex.runner
 ============
 
 
-.. image:: https://dev.azure.com/abstract-technology/demo/_apis/build/status/Abstract-Tech.demo?branchName=master
-        :target: https://dev.azure.com/abstract-technology/demo/_build
+.. image:: https://dev.azure.com/abstract-technology/derex.demo/_apis/build/status/Abstract-Tech.derex.demo?branchName=master
+        :target: https://dev.azure.com/abstract-technology/derex.demo/_build
 
 Demo plugin for derex.runner
 
