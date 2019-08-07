@@ -10,7 +10,7 @@ steps:
 - script: |
     pip3 install -U pip setuptools
     pip3 install -r requirements_dev.txt -r requirements.txt . git+https://github.com/Abstract-Tech/pytest-azurepipelines.git
-  displayName: 'Install derex.runner'
+  displayName: 'Install derex.demo'
 
 - script: nohup ddc pull &
   displayName: 'Pull edX image in background'
@@ -24,11 +24,11 @@ steps:
 
 - script: |
     # We installed the package with pip, and coverage reports the full absolute path.
-    # We cut to derex/runner/etc/etc
-    DEREX_RUNNER_PATH=`cd tests;python -c "from pathlib import Path; import derex.runner;print(Path(derex.runner.__file__).parent.parent.parent)"`
-    echo Replacing ${DEREX_RUNNER_PATH} in tests/htmlcov/*.html
-    grep "${DEREX_RUNNER_PATH}" tests/htmlcov/*.html
-    sed -i -e "s|${DEREX_RUNNER_PATH}||" tests/htmlcov/*.html
+    # We cut to derex/demo/etc/etc
+    DEREX_DEMO_PATH=`cd tests;python -c "from pathlib import Path; import derex.demo;print(Path(derex.runner.__file__).parent.parent.parent)"`
+    echo Replacing ${DEREX_DEMO_PATH} in tests/htmlcov/*.html
+    grep "${DEREX_DEMO_PATH}" tests/htmlcov/*.html
+    sed -i -e "s|${DEREX_DEMO_PATH}||" tests/htmlcov/*.html
     npm install juice
     # Azure pipelines strips style sheets but leaves styles in place.
     # juice can embed the styles in the HTML for us and present a much better
