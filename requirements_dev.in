@@ -13,3 +13,4 @@ pytest
 pytest-cov
 twine
 wheel
+pyyaml==4.2b4
