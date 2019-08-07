@@ -25,7 +25,7 @@ steps:
 - script: |
     # We installed the package with pip, and coverage reports the full absolute path.
     # We cut to derex/demo/etc/etc
-    DEREX_DEMO_PATH=`cd tests;python -c "from pathlib import Path; import derex.demo;print(Path(derex.runner.__file__).parent.parent.parent)"`
+    DEREX_DEMO_PATH=`cd tests;python -c "from pathlib import Path; import derex.demo;print(Path(derex.demo.__file__).parent.parent.parent)"`
     echo Replacing ${DEREX_DEMO_PATH} in tests/htmlcov/*.html
     grep "${DEREX_DEMO_PATH}" tests/htmlcov/*.html
     sed -i -e "s|${DEREX_DEMO_PATH}||" tests/htmlcov/*.html
