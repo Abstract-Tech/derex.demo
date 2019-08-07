@@ -36,7 +36,7 @@ setup(
         "Programming Language :: Python :: 3.7",
     ],
     entry_points={"derex.runner": ["demo=derex.demo:config"]},
-    description="Run Open edX demo",
+    description="Demo plugin for derex.runner",
     install_requires=requirements,
     license="GNU General Public License v3",
     long_description=readme + "\n\n" + history,
