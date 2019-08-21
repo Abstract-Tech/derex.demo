@@ -78,4 +78,4 @@ wheel==0.33.4
 zipp==0.5.2               # via importlib-metadata
 
 # The following packages are considered to be unsafe in a requirements file:
-# setuptools==41.0.1        # via flake8-import-order, twine
+# setuptools==41.2.0        # via flake8-import-order, twine
