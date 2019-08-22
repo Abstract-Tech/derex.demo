@@ -35,7 +35,7 @@ setup(
         "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
     ],
-    entry_points={"derex.runner": ["demo=derex.demo:config"]},
+    entry_points={"derex.runner": ["demo=derex.demo.demo:DemoServices"]},
     description="Demo plugin for derex.runner",
     install_requires=requirements,
     setup_requires=setup_requirements,

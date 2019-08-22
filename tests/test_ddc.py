@@ -10,5 +10,5 @@ def test_ensure_plugin_loaded():
 
     result = runner.invoke(ddc_ironwood, ["config"])
 
-    assert "Loading DemoConfig" in result.output
+    assert "Loading demo" in result.output
     assert "demo_lms" in result.output

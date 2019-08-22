@@ -1,6 +1,6 @@
 import logging
 import pkg_resources
-from typing import List, Dict, Callable
+from typing import List, Dict, Union
 
 from derex import runner  # type: ignore
 
@@ -11,11 +11,14 @@ def compose_path(name: str) -> str:
     return pkg_resources.resource_filename(__name__, f"compose/files/path/{name}")
 
 
-class DemoConfig:
-    def yaml_opts_openedx(self) -> List[str]:
-        return ["-f", compose_path("demo.yml")]
-
+class DemoServices:
+    @staticmethod
     @runner.hookimpl
-    def settings(self) -> Dict[str, Callable]:
-        logger.info("Running in plugin Demo")
-        return {"openedx": self.yaml_opts_openedx}
+    def compose_options() -> Dict[str, Union[str, List[str]]]:
+        options = ["-f", compose_path("demo.yml")]
+        return {
+            "options": options,
+            "name": "demo",
+            "priority": ">base",
+            "variant": "openedx",
+        }
